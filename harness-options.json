@@ -1,0 +1,90 @@
+{
+ "check_memory": false, 
+ "enable_e10s": false, 
+ "is-sdk-bundled": false, 
+ "jetpackID": "jid1-7Udz0RBxxTMqtQ@jetpack", 
+ "loader": "addon-sdk/lib/sdk/loader/cuddlefish.js", 
+ "main": "main", 
+ "mainPath": "erabat/main", 
+ "manifest": {
+  "erabat/barbutton": {
+   "docsSHA256": null, 
+   "jsSHA256": "a5dc577e9b0c4035f611cf6fea6498e7cfacdaa02959c79f0f6490593f6de206", 
+   "moduleName": "barbutton", 
+   "packageName": "eRabatRadar", 
+   "requirements": {
+    "listen": "erabat/listen", 
+    "unload+": "erabat/unload+", 
+    "window-utils": "sdk/deprecated/window-utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "erabat/listen": {
+   "docsSHA256": null, 
+   "jsSHA256": "74057caf6a837e6c8a3e8e73762b1bc08e69e6e087bee5401580a9249a34701c", 
+   "moduleName": "listen", 
+   "packageName": "eRabatRadar", 
+   "requirements": {
+    "unload+": "erabat/unload+"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "erabat/main": {
+   "docsSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", 
+   "jsSHA256": "4308de8cbd1c60f4e3039aa1cbc145c72edc384f324314a417120835a4fd66a5", 
+   "moduleName": "main", 
+   "packageName": "eRabatRadar", 
+   "requirements": {
+    "barbutton": "erabat/barbutton", 
+    "sdk/page-mod": "sdk/page-mod", 
+    "sdk/panel": "sdk/panel", 
+    "sdk/request": "sdk/request", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/widget": "sdk/widget"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "erabat/unload+": {
+   "docsSHA256": null, 
+   "jsSHA256": "b3b4628cb06c48ac958f1f3db2d34f102ccccd3b0f4e98a7fed2f90ddf7eadaf", 
+   "moduleName": "unload+", 
+   "packageName": "eRabatRadar", 
+   "requirements": {
+    "unload": "sdk/system/unload"
+   }, 
+   "sectionName": "lib"
+  }
+ }, 
+ "metadata": {
+  "addon-sdk": {
+   "description": "Add-on development made easy.", 
+   "keywords": [
+    "javascript", 
+    "engine", 
+    "addon", 
+    "extension", 
+    "xulrunner", 
+    "firefox", 
+    "browser"
+   ], 
+   "license": "MPL 2.0", 
+   "name": "addon-sdk"
+  }, 
+  "erabat": {
+   "author": "eRabat.cz", 
+   "description": "S na\u0161\u00EDm pomocn\u00EDkem V\u00E1m ji\u017E \u017E\u00E1dn\u00E1 v\u00FDhoda neunikne! P\u0159ipomene se v ka\u017Ed\u00E9m obchod\u011B, ve kter\u00E9m m\u016F\u017Eete s eRabat.cz nakupovat levn\u011Bji!",    
+   "homepage": "http://www.erabat.cz/", 
+   "license": "MPL 2.0", 
+   "main": "main", 
+   "name": "erabat", 
+   "version": "2.0"
+  }
+ }, 
+ "name": "erabat", 
+ "parseable": false, 
+ "sdkVersion": "1.15", 
+ "staticArgs": {}, 
+ "verbose": false
+}

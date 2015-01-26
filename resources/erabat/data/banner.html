@@ -1,0 +1,113 @@
+<div id="eRabatRadar">
+<meta charset="utf-8" />
+<style>
+  #erabatradar_panel { z-index: 200000 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important;
+    height: 40px !important; padding: 5px !important; text-align: center !important;
+    background: url(http://erabat.cz/_public/img/csb_background.png) !important; -webkit-box-shadow: 0px 3px 5px 0px black !important;
+    -moz-box-shadow: 0px 3px 5px 0px black !important; box-shadow: 0px 3px 5px 0px black !important;
+    -webkit-box-sizing: content-box !important; -moz-box-sizing: content-box !important; box-sizing: content-box !important;}
+  #erabatradar_panel table {width: 100% !important; height: 40px !important; margin: 0 !important; padding: 0 !important;
+    background: transparent !important; border: 0 !important;}
+  #erabatradar_panel table tr {height: 40px !important; margin: 0 !important; padding: 0 !important; border: 0 !important;  text-align: center !important;}
+  #erabatradar_panel table td {height: 40px !important; margin: 0 !important; padding: 0 !important; vertical-align: middle !important;
+    line-height: 0px !important; border: 0 !important; background: transparent !important; text-align: left !important;}
+  #erabatradar_panel table td.erabatradar_logo {width: 280px !important;}
+  #erabatradar_panel table td.erabatradar_logo img {width: 265px !important; height: 40px !important; margin: 0 !important; padding: 0 !important;}
+  #erabatradar_panel table td.erabatradar_text {color: black !important; text-align: center !important;
+    font: normal 16px tahoma,arial,sans-serif !important; line-height: 18px !important; letter-spacing: 0px !important;}
+  #erabatradar_panel table td.erabatradar_activating {display: none;}
+  #erabatradar_panel table td.erabatradar_btns {width: 280px !important; text-align: right !important;}
+  #erabatradar_panel table td.erabatradar_btns form {display: inline !important;}
+  #erabatradar_panel table td.erabatradar_btns form input#erabat_go2store, #erabatradar_panel table td.erabatradar_btns span#erabat_close,
+    #erabat_form input#erabat_save {display: inline-block !important; margin: 0 10px 0 0 !important; padding: 6px 16px !important;
+    border: 0 !important; cursor: pointer !important; vertical-align: middle !important; color: white !important;
+    background: rgb(135,29,27) !important;
+    background: -moz-linear-gradient(top, rgb(135,29,27) 0%, rgb(187,7,27) 47%, rgb(135,29,27) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(135,29,27)), color-stop(47%,rgb(187,7,27)), color-stop(100%,rgb(135,29,27))) !important;
+    background: -webkit-linear-gradient(top, rgb(135,29,27) 0%,rgb(187,7,27) 47%,rgb(135,29,27) 100%) !important;
+    background: -o-linear-gradient(top, rgb(135,29,27) 0%,rgb(187,7,27) 47%,rgb(135,29,27) 100%) !important;
+    background: -ms-linear-gradient(top, rgb(135,29,27) 0%,rgb(187,7,27) 47%,rgb(135,29,27) 100%) !important;
+    background: linear-gradient(to bottom, rgb(135,29,27) 0%,rgb(187,7,27) 47%,rgb(135,29,27) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#871d1b', endColorstr='#871d1b',GradientType=0 ) !important;
+    -webkit-border-radius: 5px !important; -moz-border-radius: 5px !important; border-radius: 5px !important;
+    -webkit-box-shadow: 0px 0px 8px white !important; -moz-box-shadow: 0px 0px 8px white !important; box-shadow: 0px 0px 8px white !important;
+    -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important;
+    font: bold 16px tahoma,arial,sans-serif !important; text-decoration: none !important; text-indent: initial !important;
+    text-transform: initial !important;}
+  #erabatradar_panel table td.erabatradar_btns form input#erabat_go2store {width: 167px !important; height: 32px !important;}
+  #erabatradar_panel table td.erabatradar_btns span#erabat_close {min-width: 47px !important;}
+  #erabat_chancl {display: none;}
+  #erabat_form input#erabat_save {min-width: 190px !important; height: 26px !important; margin-right: 0 !important;
+    padding: 4px 10px !important; font: bold 14px tahoma,arial,sans-serif !important;}
+  #erabat_form {z-index: 200000 !important; display: none; position: fixed !important; top: 50px !important; right: 0 !important;
+    width: 245px !important; height: 90px !important; padding: 4px 10px !important; text-align: right !important;
+    background: url(http://erabat.cz/_public/img/csb_background.png) !important;
+    -webkit-border-bottom-left-radius: 5px !important; -moz-border-radius-bottomleft: 5px !important; border-bottom-left-radius: 5px !important;
+    -webkit-box-shadow: -2px 3px 5px 0px black !important; -moz-box-shadow: -2px 3px 5px 0px black !important; box-shadow: -2px 3px 5px 0px black !important;
+    -webkit-box-sizing: content-box !important; -moz-box-sizing: content-box !important; box-sizing: content-box !important;}
+  #erabat_form label {display: inline-block !important; margin-right: 10px !important; font: normal 16px tahoma,arial,sans-serif !important;
+    color: black !important;}
+  #erabat_form input#erabat_login, #erabat_form input#erabat_password {display: inline-block !important; width: 170px !important;
+    margin: 0 0 4px 0 !important; outline: 0; padding: 2px 8px !important; height: 20px !important; line-height: 20px !important;
+    border: 1px solid !important; font: normal 14px tahoma,arial,sans-serif !important; background: white !important;
+    -webkit-border-radius: 5px !important; -moz-border-radius: 5px !important; border-radius: 5px !important;
+    -webkit-box-sizing: content-box !important; -moz-box-sizing: content-box !important; box-sizing: content-box !important;}
+  .erabat_button {color: white !important;}
+  .erabat_button:hover {color: black !important;}
+  .erabatradar_bold {font-family: inherit !important; font-weight: bold !important; font-size: inherit !important;}
+  .erabatradar_small {font-family: inherit !important; font-size: 12px !important;}
+  .erabatradar_link {color: #a60013 !important; text-decoration: underline !important; cursor: pointer !important; font-size: inherit !important;}
+  @media (max-width: 1024px) {
+    #erabatradar_panel table tr { line-height: 11px !important; }
+    #erabatradar_panel table td.erabatradar_text { font-size: 13px !important; line-height: 11px !important; }
+    .erabatradar_small { font-size: 11px !important; line-height: 11px !important; }
+  }
+</style>
+<div id="erabatradar_panel">
+  <table>
+    <tr>
+      <td class="erabatradar_logo"><img src="{{LOGO}}" alt="eRabatRadar" /></td>
+      <td class="erabatradar_text erabatradar_enabled">
+        V e-shopu
+        <span class="erabatradar_bold">{{TITLE}}</span>
+        můžete nakupovat s cashbackem
+        <span class="erabatradar_bold">{{CASHBACK}}</span>!<br />
+        <span class="erabatradar_small">
+          eRabat účet
+          <span class="erabatradar_bold" id="erabat_user">(účet není nastaven)</span>
+          aktivujete stiskem tlačítka
+          <span class="erabatradar_bold">Využít eRabat.cz</span>
+          (<span class="erabatradar_link" id="erabat_change">změnit účet</span><span class="erabatradar_link" id="erabat_chancl">zavřít</span>)
+        </span>
+      </td>
+      <td class="erabatradar_text erabatradar_activating">
+        <span class="erabatradar_bold">Nyní nakupujete s cashbackem {{CASHBACK}}!</span><br />
+        <span class="erabatradar_small">
+          Tato lišta se sama zavře za <span class="erabatradar_seconds">3 sekundy</span>...
+        </span>
+      </td>
+      <td class="erabatradar_btns">
+        <form method="post" action="http://erabat.cz/rozsireni" id="erabat_go2store_form">
+          <input type="hidden" name="user" value="" id="erabat_form_user" />
+          <input type="hidden" name="pass" value="" id="erabat_form_pass" />
+          <input type="hidden" name="shop" value="{{ID}}/{{MNEMONIC}}" />
+          <input type="hidden" name="go2store" value="{{TITLE}}" />
+          <input type="hidden" name="url" value="{{URL}}" />
+          <input type="hidden" name="version" value="Firefox {{VERSION}}" />
+          <input type="submit" value="Využít eRabat.cz" id="erabat_go2store" class="erabat_button" />
+        </form>
+        <span class="erabat_button" id="erabat_close">Zavřít</span>
+      </td>
+    </tr>
+  </table>  
+</div>
+<div id="erabat_form">
+  <form style="text-align: right !important;">
+    <label>Login</label>
+    <input type="text" id="erabat_login" /><br />
+    <label>Heslo</label>
+    <input type="password" id="erabat_password" /><br />
+    <input type="submit" id="erabat_save" value="Uložit přihlašovací údaje" class="erabat_button" />
+  </form>
+</div>
+</div>
